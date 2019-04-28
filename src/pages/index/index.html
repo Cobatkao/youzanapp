@@ -31,7 +31,7 @@
             <div class="content">
                 <!-- <div class="js-image-swiper custom-image-swiper  custom-image-swiper-single" data-images="1">
                  </div>  -->
-                <swipe :lists="bannerLists" name="swipe.vue" v-if="bannerLists"></swipe>
+<!--                <swipe :lists="bannerLists" name="swipe.vue" v-if="bannerLists"></swipe>-->
                 <!-- <a href="https://maijia.youzan.com/mars/notice/detail?id=" class="notice"></a> -->
                 <div class="section-title">优店推荐</div>
                 <div class="section-content shops">
@@ -65,13 +65,13 @@
                 <div class="hot-goods js-waterfull-wrap" data-src="">
                     <ul class="js-list js-lazy" data-src=""
                         v-infinite-scroll="getLists"
-                        infinite-scroll-disabled="loading"
+                        infinite-scroll-disabled="notLoading"
                         infinite-scroll-distance="10">
                         <li v-for="list in lists" :key="list.id">
                             <div class="goods-item">
                                 <a href="https://h5.youzan.com/v2/showcase/goods?alias=2fwig6rnqfq6m&amp;source=yzapp&amp;f_platform=yzapp">
                                     <div class="thumb img-box">
-                                        <img class="fadeIn" v-bind:src="list.img">
+                                        <img class="fadeIn" :src="list.img" alt="item's images">
                                     </div>
                                     <div class="detail">
                                         <div class="title">{{list.name}}</div>
@@ -81,12 +81,12 @@
                             </div>
                         </li>
                     </ul>
-                    <div class="loading-more" v-show="loading"><span></span></div>
+                    <div class="loading-more" v-show="notLoading"><span></span></div>
                 </div>
                 <!-- <div class="js-show-find category-guid" style="display: none;"></div> -->
             </div>
         </div>
-        <foot></foot>
+      <custom-footer />
     </div>
 </body>
 

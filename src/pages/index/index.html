@@ -29,10 +29,10 @@
     <div id="app">
         <div class="container with-bottom-nav" style="min-height: 667px;">
             <div class="content">
-                <!-- <div class="js-image-swiper custom-image-swiper  custom-image-swiper-single" data-images="1">
-                 </div>  -->
-<!--                <swipe :lists="bannerLists" name="swipe.vue" v-if="bannerLists"></swipe>-->
-                <!-- <a href="https://maijia.youzan.com/mars/notice/detail?id=" class="notice"></a> -->
+                <div class="js-image-swiper custom-image-swiper  custom-image-swiper-single" data-images="1">
+                  <custom-swiper  v-if="banners" :lists="banners" name="swiper.vue" />
+                </div>
+                <a href="https://maijia.youzan.com/mars/notice/detail?id=" class="notice"></a>
                 <div class="section-title">优店推荐</div>
                 <div class="section-content shops">
                     <div class="shop-wrap">

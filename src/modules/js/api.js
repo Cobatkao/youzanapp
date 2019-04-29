@@ -1,5 +1,6 @@
 let url = {
-  hotLists: '/index/hotLists'
+  hotLists: '/index/hotLists',
+  indexBanner: '/index/banner'
 };
 
 let baseUrl = 'https://www.easy-mock.com/mock/5cbedc472b8e596c3bd450c4/youzan';

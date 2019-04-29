@@ -9,12 +9,12 @@ import './index.css'
 import {InfiniteScroll} from 'mint-ui'
 Vue.use(InfiniteScroll)
 
-import customFooter from 'components/custom-footer.vue'
+import CustomFooter from 'components/CustomFooter.vue'
 
 new Vue({
   el: '#app',
   components: {
-    customFooter
+    CustomFooter
   },
   data: {
     lists: null,

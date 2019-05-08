@@ -12,6 +12,9 @@
 </template>
 
 <script>
+  import Swiper from 'swiper'
+  import 'swiper/dist/css/swiper.css'
+
   export default {
     name: 'CustomSwiper',
     props: {
@@ -22,8 +25,19 @@
       name: {}
     },
     mounted() {
-
-    }
+      new Swiper('.swiper-container', {
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          bulletElement: 'span',
+          clickable: true
+        },
+        autoplay: {
+          delay: 3000,
+        }
+      })
+    },
   }
 </script>
 
@@ -74,7 +88,7 @@
     float: left
   }
 
-  .swipe_slide > img {
+  .swipe_slide  img {
     max-width: 100%;
     max-height: 100%
   }
@@ -89,7 +103,7 @@
 
   .swiper-pagination {
     margin: 0;
-    text-align: right;
+    text-align: center;
     position: absolute;
     bottom: 5px;
     width: 100%;

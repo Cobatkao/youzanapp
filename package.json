@@ -63,12 +63,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-<<<<<<< HEAD
-  ]
-=======
   ],
   "main": "postcss.config.js",
   "keywords": [],
   "license": "ISC"
->>>>>>> b9c6e6dbec144b8d3abb5773c801eab91af472c8
 }

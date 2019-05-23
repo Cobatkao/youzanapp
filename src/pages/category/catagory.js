@@ -14,8 +14,13 @@ new Vue({
             topList: null,
             topIndex: 0,
             subData: null,
-            rankata: null
+            comRankData: []
         }
+    },
+    filters: {
+      currency(price) {
+        return price.toFixed(2)
+      }
     },
     methods: {
         getTopList() {
@@ -28,10 +33,10 @@ new Vue({
         getSubList(index, id) {
             this.topIndex = index
             //默认请求综合排行
-            if (index === 0) {
+            if (index == 0) {
                 this.getRank()
             } else {
-                //点击其他类后请求
+                //点击其他类后请求分页
                 axios.get(url.subList, {id}).then(res => {
                     this.subData = res.data.data.data
                 }).catch(err => {
@@ -41,7 +46,7 @@ new Vue({
         },
         getRank() {
             axios.get(url.rank).then(res => {
-                this.rankata = res.data.data.data
+                this.comRankData = res.data.data.data
             }).catch(err => {
                 console.info(err)
             })
@@ -49,6 +54,7 @@ new Vue({
     },
     created() {
         this.getTopList()
+        //默认请求综合排行
         this.getSubList(0)
     },
     components: {
